@@ -18,3 +18,36 @@ Install `mldriguard` directly from PyPI:
 
 ```bash
 pip install mldriguard
+
+## Prerequisites
+- Python 3.6 or higher.
+- Ensure you have pip and an internet connection to install dependencies.
+## Usage
+Example 1: Synthetic Data (Demo)
+This example replicates the test_drift.py script used during development, demonstrating drift detection with synthetic data.
+```
+import pandas as pd
+import numpy as np
+from mldriguard import DriftGuard
+
+# Create synthetic reference and new data
+reference_data = pd.DataFrame({
+    'num_col': np.random.normal(0, 1, 100),
+    'cat_col': np.random.choice(['A', 'B'], 100)
+})
+new_data = pd.DataFrame({
+    'num_col': np.random.normal(1, 1, 100),
+    'cat_col': np.random.choice(['A', 'B'], 100)
+})
+
+# Initialize DriftGuard and monitor drift
+dg = DriftGuard(reference_data)
+results = dg.monitor(new_data)
+print("Drift Results:", results)
+
+# Visualize drift
+dg.plot_drift(new_data)
+
+# Suggest mitigation
+print("Mitigation Suggestions:", dg.suggest_mitigation())
+```
