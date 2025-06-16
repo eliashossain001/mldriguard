@@ -14,11 +14,21 @@
 
 ## Installation
 
-Install `mldriguard` directly from PyPI:
+### Option 1: From GitHub (Recommended)
+
+You can install MLDriftGuard directly from the GitHub repository:
 
 ```bash
-pip install mldriguard
+pip install https://github.com/eliashossain001/mldriguard
 ```
+
+### Option 2: From Local Directory
+If you've cloned or downloaded the project locally:
+```bash
+cd mldriguard
+pip install .
+```
+
 ## Prerequisites
 
 - Python 3.6 or higher.
