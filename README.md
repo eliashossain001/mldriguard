@@ -111,4 +111,8 @@ These are installed automatically with the package.
 We welcome contributions to improve MLDriftGuard!
 
 
+## Author
+Elias Hossain
+Software Engineer (ML/AI)
+Email: elias.hosssain191@gmail.com
 
