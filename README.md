@@ -18,8 +18,9 @@ Install `mldriguard` directly from PyPI:
 
 ```bash
 pip install mldriguard
-
+```
 ## Prerequisites
+
 - Python 3.6 or higher.
 - Ensure you have pip and an internet connection to install dependencies.
 ## Usage
@@ -51,4 +52,60 @@ dg.plot_drift(new_data)
 
 # Suggest mitigation
 print("Mitigation Suggestions:", dg.suggest_mitigation())
+
+```
+
+## Expected Output:
+
+results will contain a dictionary with p_value and drift_detected for each column.
+A plot will show KDE for num_col and bars for cat_col, with "Drift: True" if detected.
+Mitigation suggestions (e.g., "Consider retraining") if drift is present.
+
+## Example 2: Real-World Data
+This example shows how to use mldriguard with a CSV file containing real data (e.g., sales figures and regions).
+
+```bash
+import pandas as pd
+from mldriguard import DriftGuard
+
+# Load real-world data
+reference_data = pd.read_csv("reference_sales.csv")  # Columns: 'sales' (numerical), 'region' (categorical)
+new_data = pd.read_csv("new_sales.csv")  # Same structure
+
+# Initialize and monitor
+dg = DriftGuard(reference_data)
+results = dg.monitor(new_data)
+print("Drift Results:", results)
+
+# Visualize
+dg.plot_drift(new_data)
+
+# Suggest mitigation
+print("Mitigation Suggestions:", dg.suggest_mitigation())
+
+```
+
+## Notes:
+
+Replace reference_sales.csv and new_sales.csv with your data files.
+Ensure column names match between datasets.
+Customizing Drift Detection
+Significance Level: By default, drift is detected at a p-value threshold of 0.05. You can adjust this by modifying the source code or subclassing DriftGuard (future updates may include a parameter).
+Data Types: The package automatically handles numerical and categorical columns. Ensure your data is clean (no missing values may cause errors unless handled).
+
+```bash
+Dependencies
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+matplotlib>=3.4.0
+seaborn>=0.11.0
+These are installed automatically with the package.
+
+```
+
+## Contributing
+We welcome contributions to improve MLDriftGuard!
+
+
 
