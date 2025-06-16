@@ -57,9 +57,12 @@ print("Mitigation Suggestions:", dg.suggest_mitigation())
 
 ## Expected Output:
 
-results will contain a dictionary with p_value and drift_detected for each column.
+Results will contain a dictionary with p_value and drift_detected for each column.
 A plot will show KDE for num_col and bars for cat_col, with "Drift: True" if detected.
 Mitigation suggestions (e.g., "Consider retraining") if drift is present.
+
+![image](https://github.com/user-attachments/assets/a48efba5-6afa-42b0-a2de-895bb6621be0)
+
 
 ## Example 2: Real-World Data
 This example shows how to use mldriguard with a CSV file containing real data (e.g., sales figures and regions).
