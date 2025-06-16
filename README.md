@@ -29,6 +29,13 @@ cd mldriguard
 pip install .
 ```
 
+To install in editable (development) mode:
+
+---bash
+pip install -e .
+```
+
+
 ## Prerequisites
 
 - Python 3.6 or higher.
