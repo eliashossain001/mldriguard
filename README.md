@@ -112,7 +112,6 @@ We welcome contributions to improve MLDriftGuard!
 
 
 ## Author
-Elias Hossain
-Software Engineer (ML/AI)
+Elias Hossain. 
 Email: elias.hosssain191@gmail.com
 
