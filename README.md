@@ -25,7 +25,8 @@ pip install mldriguard
 ## Usage
 Example 1: Synthetic Data (Demo)
 This example replicates the test_drift.py script used during development, demonstrating drift detection with synthetic data.
-```
+
+```bash
 import pandas as pd
 import numpy as np
 from mldriguard import DriftGuard
@@ -50,4 +51,4 @@ dg.plot_drift(new_data)
 
 # Suggest mitigation
 print("Mitigation Suggestions:", dg.suggest_mitigation())
-```
+
