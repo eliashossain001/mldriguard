@@ -31,7 +31,7 @@ pip install .
 
 To install in editable (development) mode:
 
----bash
+```bash
 pip install -e .
 ```
 
